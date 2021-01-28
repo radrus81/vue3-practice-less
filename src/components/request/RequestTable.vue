@@ -1,5 +1,5 @@
 <template>
-  <h4 v-if="!requests.length" class="text-center">заявок пока нет</h4>
+  <h4 v-if="requests.length === 0" class="text-center">заявок пока нет</h4>
   <table v-else class="table">
     <thead>
       <tr>

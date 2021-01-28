@@ -34,8 +34,9 @@ import { useRequestForm } from '../../use/request-form'
 export default {
   emits: ['created'],
   setup(_, { emit }) {
+    const store = useStore()
     const submit = async (values) => {
-      console.log(values)
+      await store.dispatch('request/create', values)
       emit('created')
     }
     return { ...useRequestForm(submit) }
