@@ -5,7 +5,7 @@ export default {
   namespaced: true,
   state() {
     return {
-      requests: [{ id: 'dfref1er2f121f' }],
+      requests: [],
     }
   },
   mutations: {

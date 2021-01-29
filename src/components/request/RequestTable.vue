@@ -12,12 +12,12 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
+      <tr v-for="data in requests" :key="data.id">
         <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>{{ data.fio }}</td>
+        <td>{{ data.phone }}</td>
+        <td>{{ data.sum }}</td>
+        <td>{{ data.status }}</td>
         <td></td>
       </tr>
     </tbody>
@@ -26,8 +26,8 @@
 
 <script>
 export default {
-  props: ['requests'],
-}
+  props: ["requests"]
+};
 </script>
 
 <style></style>

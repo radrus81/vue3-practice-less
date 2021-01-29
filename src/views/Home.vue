@@ -12,28 +12,24 @@
 </template>
 
 <script>
-import { ref, computed } from 'vue'
-import AppPage from '../components/ui/AppPage.vue'
-import RequestTable from '../components/request/RequestTable'
-import RequestModal from '../components/request/RequestModal'
-import AppModal from '../components/ui/AppModal'
-import { useStore } from 'vuex'
+import { ref, computed } from "vue";
+import { useStore } from "vuex";
+import AppPage from "../components/ui/AppPage.vue";
+import RequestTable from "../components/request/RequestTable";
+import RequestModal from "../components/request/RequestModal";
+import AppModal from "../components/ui/AppModal";
 
 export default {
   setup() {
-    const modal = ref(false)
-    const store = useStore()
-    const requests1 = computed(() => {
-      store.getters['request/requests']
-    })
-    console.log(requests1.value)
-    const requests = []
+    const modal = ref(false);
+    const store = useStore();
+    const requests = computed(() => store.getters["request/requests"]);
 
     return {
       modal,
-      requests,
-    }
+      requests
+    };
   },
-  components: { AppPage, RequestTable, AppModal, RequestModal },
-}
+  components: { AppPage, RequestTable, AppModal, RequestModal }
+};
 </script>
